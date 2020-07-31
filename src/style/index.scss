@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap');
+@import '../../node_modules/quill/dist/quill.snow.css';
+@import '../../node_modules/nprogress/nprogress.css';
+@import 'vars';
+@import 'helpers';
+@import 'grid';
+@import 'dropdown';
+@import 'navigation';
+@import 'tag';
+@import 'tooltip';
+@import 'form';
+@import 'modal';
+@import 'texteditor';
+@import 'slider';
+
+html,
+body,
+main,
+#kronologic-ai-app {
+  height: 100%;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  scrollbar-width: none;
+}
+
+body {
+  font-size: var(--default-text-size);
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+
+  background: var(--bg-color);
+  color: var(--primary-text-color);
+
+  a {
+    color: var(--link-color);
+    text-decoration: none;
+  }
+
+  main {
+    padding-top: 100px;
+  }
+
+  hr {
+    border: 1px solid var(--hr-color);
+    border-style: solid;
+    margin-block: 0;
+  }
+}
+
+.react-dropdown-select {
+  border-radius: var(--border-radius) !important;
+  border: var(--input-border) var(--input-border-style)
+    var(--input-border-color) !important;
+  background: var(--input-bg-color);
+  margin: 0.5rem 0;
+
+  .react-dropdown-select-option {
+    border-radius: var(--border-radius) !important;
+    background: var(--primary-color);
+    align-items: center;
+    padding: 0 5px 0 15px;
+    color: var(--dd-multi-color);
+  }
+
+  .react-dropdown-select-input {
+    height: 25px;
+    width: auto;
+
+    font-size: var(--input-size);
+    background: var(--input-bg-color);
+    color: var(--input-text-color);
+    padding-left: 15px;
+  }
+
+  .react-dropdown-select-type-single {
+    padding-left: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    > .react-dropdown-select-input {
+    }
+  }
+
+  .react-dropdown-select-dropdown {
+    font-size: var(--input-size);
+    background: var(--input-bg-color);
+    color: var(--input-text-color);
+    border: var(--input-border) var(--input-border-style)
+      var(--input-border-color) !important;
+  }
+
+  .react-dropdown-select-item {
+    border: none !important;
+  }
+}

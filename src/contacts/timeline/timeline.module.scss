@@ -1,0 +1,93 @@
+:local {
+  .timeline {
+    padding: 0 25px;
+    position: relative;
+    min-height: 100%;
+    overflow: scroll;
+    overflow-x: hidden;
+    display: flex;
+    height: 100%;
+
+    -ms-overflow-style: none; // IE 10+
+    scrollbar-width: none; // Firefox
+
+    &::-webkit-scrollbar {
+      width: 0 !important;
+      height: 0;
+      display: none;
+      background: transparent;
+    }
+  }
+
+  .pole {
+    left: 55px;
+    position: absolute;
+    width: 1px;
+    border-left: 1px dashed var(--primary-color);
+  }
+
+  .fluxes {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+
+    > .fluxGroup {
+      position: relative;
+      margin-bottom: 50px;
+
+      > .flux {
+        margin: 15px 50px;
+
+        > .bodyWrapper {
+          padding: 10px;
+          background-color: var(--timeline-header-bg-color);
+          border-radius: var(--border-radius);
+
+          > header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            margin: 5px 0 15px 0;
+
+            > h3 {
+              color: var(--fire-color);
+              font-size: 14px;
+            }
+          }
+
+          > .body {
+            padding: 25px 0 1px 25px;
+            background-color: var(--timeline-bg-color);
+            border-radius: var(--border-radius);
+          }
+        }
+      }
+
+      > .tag {
+        font-weight: 600;
+        color: var(--whisper-color);
+        background-color: var(--primary-color);
+        display: inline-block;
+        padding: 7px 10px;
+        border-radius: var(--border-radius);
+      }
+    }
+  }
+
+  .fluxItem {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 25px;
+
+    .tag {
+      margin-right: 15px;
+    }
+    .tagValue {
+    }
+  }
+}

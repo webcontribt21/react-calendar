@@ -1,0 +1,134 @@
+/** Adding main theme CSS vars */
+:root,
+[data-theme='default'] {
+  /** General values */
+  --l: 51%;
+  --summer-sky-color: hsl(202, 94%, 57%);
+  --summer-sky-color-lighter: hsl(202, 94%, 77%);
+  --white-color: hsl(0, 0%, 100%);
+  --white-color-2: hsl(0, 0%, 97%);
+  --charcoal-color: hsl(0, 0%, 26%);
+  --charcoal-color-lighter: hsl(0, 0%, 46%);
+  --charcoal-color-darker: hsl(0, 0%, 16%);
+  --grey-color: hsl(0, 0%, 70%);
+  --grey-color-darker: hsl(0, 0%, 50%);
+  --whisper-color: hsl(0, 0%, 93%);
+  --whisper-color-darker: hsl(0, 0%, calc(93% - 10%));
+  --chilean-fire-color: hsl(13, 72%, 53%);
+  --chilean-fire-color-lighter: hsl(13, 72%, 83%);
+
+  --border-radius: 5px;
+
+  /** Synonims */
+  --chilean-color: var(--chilean-fire-color);
+  --fire-color: var(--chilean-fire-color);
+
+  --bg-color: hsl(0, 0%, 97%);
+  --hr-color: hsl(0, 0%, 90%);
+
+  --default-text-size: 1rem;
+  --default-icon-size: 1.5rem;
+
+  --primary-color: var(--summer-sky-color);
+  --primary-icon-color: var(--charcoal-color);
+  --primary-color-lighter: var(--summer-sky-color-lighter);
+  --primary-color-darker: hsl(201, 100%, calc(var(--l) - 10%));
+  --primary-text-color: var(--charcoal-color);
+
+  --secondary-color: var(--grey-color);
+  --secondary-color-darker: var(--grey-color-darker);
+  --secondary-text-color: var(--summer-sky-color);
+  --link-color: var(--summer-sky-color);
+  --secondary-link-color: hsl(0, 0%, 60%);
+
+  /** dropdown vars */
+  --dd-bg-color: var(--white-color);
+  --dd-bg-color-hover: var(--whisper-color);
+  --dd-bg-color-chevron: hsl(0, 0%, 30%);
+  --dd-bg-color-chevron-hover: hsl(0, 0%, 45%);
+  --dd-multi-color: hsl(0, 0%, 100%);
+
+  /** form vars */
+  --label-size: 0.9rem;
+  --input-bg-color: var(--white-color);
+  --input-text-color: var(--charcoal-color);
+  --input-height: 3rem;
+  --input-border: 1px;
+  --input-border-style: solid;
+  --input-border-color: hsl(0, 0%, 90%);
+  --input-size: 1rem;
+  --default-placeholder-size: 0.9rem;
+  --default-placeholder-color: hsl(0, 0%, 70%);
+
+  /** SVG related vars */
+  --col-text-color: var(--charcoal-color);
+  --modal-close-color: var(--white-color);
+  --col-hr-color: hsl(0, 0%, 75%);
+  --col-icon-color: var(--charcoal-color);
+  --company-bg-color: hsl(0, 0%, 90%);
+  --company-border-color: hsl(0, 0%, 50%);
+  --node-link-color: hsl(0, 0%, 75%);
+  --node-border-color: hsl(0, 0%, 70%);
+
+  /** Shadow color vars */
+  --default-shadow-color: hsl(0, 0%, 85%);
+
+  /** card colors */
+  --card-color: var(--charcoal-color);
+  --card-bg: var(--white-color);
+  --card-header-bg: hsl(210, 20%, 96.1%);
+  --card-title-color: var(--charcoal-color-lighter);
+
+  /** contacts page specific */
+  --contact-select-bg-color: var(--whisper-color);
+  --not-active-stroke: var(--grey-color);
+
+  /** Timeline */
+  --timeline-header-bg-color: var(--whisper-color);
+  --timeline-bg-color: var(--white-color-2);
+
+  /** Editor Global features */
+}
+
+[data-theme='dark'] {
+  --primary-text-color: hsl(0, 0%, 98%);
+
+  --secondary-color: hsl(0, 0%, 10%);
+  --secondary-color-darker: hsl(0, 0%, 3%);
+  --secondary-text-color: var(--whisper-color-darker);
+
+  --bg-color: hsl(0, 0%, 14%);
+  --hr-color: hsl(0, 0%, 30%);
+
+  --dd-bg-color: hsl(0, 0%, 20%);
+  --dd-text-color: hsl(0, 0%, 90%);
+  --dd-multi-color: hsl(0, 0%, 100%);
+
+  /** card colors */
+  --card-color: var(--whisper-color);
+  --card-bg: var(--charcoal-color);
+  --card-header-bg: var(--charcoal-color-darker);
+  --card-title-color: var(--whisper-color);
+
+  /** SVG */
+  --col-text-color: var(--whisper-color);
+  --primary-icon-color: var(--whisper-color);
+  --col-icon-color: var(--whisper-color);
+  --modal-close-color: var(--whisper-color);
+
+  /** Form */
+  --input-bg-color: hsl(0, 0%, 10%);
+  --input-border-color: hsl(0, 0%, 20%);
+  --input-text-color: var(--whisper-color);
+  --default-placeholder-color: hsl(0, 0%, 30%);
+
+  /** contacts page specific */
+  --contact-select-bg-color: hsl(0, 0%, 10%);
+  --not-active-stroke: var(--charcoal-color);
+
+  /** Timeline */
+  --timeline-header-bg-color: var(--charcoal-color);
+  --timeline-bg-color: var(--charcoal-color-darker);
+
+  /** Editor Global features */
+}

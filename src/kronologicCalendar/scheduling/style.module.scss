@@ -1,0 +1,67 @@
+:local {
+  [data-theme='default'] {
+    --contact-close-modal-color: hsl(0, 0%, 95%);
+    --contact-days-color: hsl(0, 0%, 25%);
+    --contact-days-color-active: hsl(0, 0%, 95%);
+    --contact-days-bg: hsl(0, 0%, 95%);
+  }
+
+  [data-theme='dark'] {
+    --contact-close-modal-color: hsl(0, 0%, 30%);
+    --contact-days-color: hsl(0, 0%, 30%);
+    --contact-days-color-active: hsl(0, 0%, 95%);
+    --contact-days-bg: hsl(0, 0%, 85%);
+  }
+
+  .scheduling {
+    hr {
+      margin: 25px 0;
+    }
+
+    .close {
+      fill: var(--contact-close-modal-color);
+      transition: 0.3s transform
+          cubic-bezier(0.155, 1.105, 0.295, 1.12),
+        0.3s;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.25);
+      }
+    }
+  }
+
+  .settings {
+    padding: 75px 100px;
+
+    .days {
+      display: flex;
+
+      > button {
+        padding: 0;
+        > span {
+          background: var(--contact-days-bg);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: var(--contact-days-color);
+          width: 50px;
+          height: 50px;
+          margin-right: 15px;
+          border-radius: 50%;
+          font-weight: 600;
+          font-size: 18px;
+
+          &.active {
+            background: var(--primary-color);
+            color: var(--contact-days-color-active);
+          }
+        }
+      }
+    }
+
+    .time {
+      margin-top: 50px;
+    }
+  }
+}

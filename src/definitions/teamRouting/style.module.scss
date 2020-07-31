@@ -1,0 +1,105 @@
+:local {
+  [data-theme='default'] {
+    --team-routing-bg: hsl(0, 0%, 95%);
+    --team-profile-bg: hsl(0, 0%, 80%);
+    --team-routing-user-bg: hsl(0, 0%, 90%);
+    --team-routing-email-color: hsl(0, 0%, 35%);
+    --team-routing-has-conditions-fill: rgb(5, 185, 225);
+  }
+
+  [data-theme='dark'] {
+    --team-routing-bg: hsl(0, 0%, 10%);
+    --team-profile-bg: hsl(0, 0%, 17%);
+    --team-routing-user-bg: hsl(0, 0%, 7%);
+    --team-routing-email-color: hsl(0, 0%, 90%);
+    --team-routing-has-conditions-fill: rgb(5, 185, 225);
+  }
+
+  .teamRouting {
+    padding: 25px;
+    background-color: var(--team-routing-bg);
+    border-radius: var(--border-radius);
+
+    ul.users {
+      list-style: none;
+
+      .user {
+        display: flex;
+        align-items: center;
+        padding: 0 0 0 25px;
+        margin-bottom: 15px;
+        background-color: var(--team-routing-user-bg);
+        border-radius: var(--border-radius);
+        min-height: 85px;
+
+        &.disabled {
+          opacity: 0.5;
+        }
+
+        > img {
+          width: 48px;
+          height: 48px;
+          border-radius: 48px;
+          margin-right: 25px;
+        }
+
+        > .noProfileURL {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 48px;
+          height: 48px;
+          background-color: var(--team-profile-bg);
+          border-radius: 48px;
+          font-size: 18px;
+          margin-right: 25px;
+        }
+
+        > .email {
+          > button {
+            width: 180px;
+            > span {
+              color: var(--team-routing-email-color);
+              font-size: 14px;
+              font-weight: 600;
+            }
+          }
+        }
+
+        > .order {
+          > button {
+            padding: 0;
+          }
+        }
+
+        .actions {
+          > button {
+            margin-right: 15px;
+
+            &.hasConditions {
+              > svg {
+                fill: var(--team-routing-has-conditions-fill);
+              }
+            }
+
+            > svg {
+              fill: var(--team-routing-email-color);
+            }
+          }
+
+          display: flex;
+          margin: 0 0 0 auto;
+          justify-content: flex-end;
+          align-items: center;
+          margin-right: 25px;
+        }
+      }
+    }
+
+    .sliders {
+      label {
+        margin-bottom: 50px;
+      }
+    }
+  }
+}

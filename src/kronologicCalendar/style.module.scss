@@ -1,0 +1,287 @@
+:local {
+  [data-theme='default'] {
+    --kronologic-cal-time-slots-bg: hsl(0, 0%, 95%);
+    --kronologic-cal-tr-alt-bg: hsl(0, 0%, 92%);
+    --kronologic-cal-icon-fill: var(--primary-color);
+    --kronologic-cal-indicator-color: hsl(0, 0%, 95%);
+    --kronologic-cal-tr-current-bg: rgba(133, 166, 184, 0.5);
+    --kronologic-cal-current-day-bg: rgba(173, 221, 247, 0.5);
+    --kronologic-cal-shadow-day-bg: hsl(0, 0%, 93%);
+
+    --kronologic-cal-border-color: hsl(0, 0%, 80%);
+
+    --kronologic-cal-invite-default-bg: hsl(0, 0%, 80%);
+    --kronologic-cal-invite-accepted-bg: var(--primary-color);
+    --kronologic-cal-invite-waiting-bg: hsl(0, 0%, 85%);
+    --kronologic-cal-invite-intervention-bg: rgba(232, 89, 89, 0.5);
+    --kronologic-cal-invite-amount-color: hsl(150, 83%, 25%);
+    --kronologic-invite-no-profilet-bg: hsl(0, 0%, 70%);
+  }
+
+  [data-theme='dark'] {
+    --kronologic-cal-time-slots-bg: hsl(0, 0%, 11%);
+    --kronologic-cal-tr-alt-bg: hsl(0, 0%, 20%);
+    --kronologic-cal-icon-fill: var(--primary-color);
+    --kronologic-cal-indicator-color: hsl(0, 0%, 95%);
+    --kronologic-cal-tr-current-bg: hsl(0, 0%, 14%);
+    --kronologic-cal-current-day-bg: hsl(0, 0%, 14%);
+
+    --kronologic-cal-border-color: hsl(0, 0%, 30%);
+
+    --kronologic-cal-invite-default-bg: hsl(0, 0%, 30%);
+    --kronologic-cal-invite-accepted-bg: var(--primary-color);
+    --kronologic-cal-invite-waiting-bg: hsl(0, 0%, 25%);
+    --kronologic-cal-invite-intervention-bg: rgba(232, 89, 89, 0.5);
+    --kronologic-cal-invite-amount-color: hsl(150, 100%, 75%);
+    --kronologic-invite-no-profilet-bg: hsl(0, 0%, 20%);
+  }
+
+  .calendar {
+    padding: 0;
+    margin-top: -5px;
+    height: 100%;
+
+    > .kronos {
+      position: relative;
+      width: 100%;
+      height: 100%;
+
+      > header {
+        display: flex;
+        width: 100%;
+        background-color: var(--kronologic-cal-time-slots-bg);
+        position: sticky;
+
+        > .weekday {
+          top: 0;
+          width: 20%;
+          padding: 15px 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          &:first-child {
+            text-align: center;
+            min-width: 120px;
+            width: 120px;
+            border-right: 3px solid var(--primary-color);
+
+            svg {
+              fill: var(--kronologic-cal-icon-fill);
+            }
+          }
+
+          button {
+            align-self: flex-start;
+            justify-self: flex-start;
+            padding: 0;
+
+            > svg {
+              width: 2rem !important;
+              height: 2rem !important;
+              fill: var(--kronologic-cal-icon-fill);
+            }
+          }
+
+          > .content {
+            font-weight: 500;
+            font-size: 12px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-transform: uppercase;
+
+            > .date {
+              font-size: 24px;
+            }
+          }
+        }
+      }
+
+      > .slots {
+        position: relative;
+        overflow: scroll;
+        width: 100%;
+        height: 100%;
+
+        > .slot {
+          width: 100%;
+          display: flex;
+          height: 25px;
+
+          > .slotCell {
+            position: relative;
+            width: 20%;
+            font-size: 14px;
+
+            &.timeSlot {
+              display: flex;
+              flex-direction: column;
+              justify-content: flex-start;
+              justify-items: flex-start;
+              align-items: center;
+
+              &.minutes {
+                font-size: 65%;
+              }
+            }
+
+            &.shadow {
+              background-color: var(--kronologic-cal-shadow-day-bg);
+            }
+
+            &.currentDay {
+              background-color: var(--kronologic-cal-current-day-bg);
+            }
+
+            &:first-child {
+              min-width: 120px;
+              width: 120px;
+              border-right: 3px solid var(--primary-color);
+              text-align: center;
+            }
+
+            > .invitation {
+              position: absolute;
+              background: var(--kronologic-cal-invite-default-bg);
+              width: 98%;
+              height: 100%;
+              left: 15px;
+              z-index: 2;
+              border-radius: var(--border-radius);
+              padding: 7px 15px;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              border: 2px solid var(--kronologic-cal-border-color);
+
+              &.statusAccepted {
+                background-color: var(
+                  --kronologic-cal-invite-accepted-bg
+                );
+              }
+
+              &.statusWaiting {
+                background-color: var(
+                  --kronologic-cal-invite-waiting-bg
+                );
+              }
+
+              &.statusIntervention {
+                background-color: var(
+                  --kronologic-cal-invite-intervention-bg
+                );
+              }
+
+              header {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 0px;
+
+                span {
+                  height: fit-content;
+
+                  &:first-child {
+                    text-transform: capitalize;
+                    font-size: 95%;
+                    font-weight: 600;
+                  }
+
+                  &.duration {
+                    font-weight: 600;
+                    font-size: 85%;
+                  }
+                }
+              }
+
+              .contacts {
+                display: flex;
+                justify-content: flex-start;
+                align-content: flex-start;
+                margin: auto 0 0 0;
+                height: 100%;
+
+                .profileURL {
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+
+                  > img {
+                    border-radius: 50%;
+                    width: 32px;
+                    height: 32px;
+                  }
+
+                  > .noProfileURL {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 32px;
+                    height: 32px;
+                    background-color: var(
+                      --kronologic-invite-no-profilet-bg
+                    );
+                    border-radius: 50%;
+                    font-size: 12px;
+                    margin-right: 25px;
+                  }
+                }
+              }
+
+              .content {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                align-content: center;
+                margin: auto 0 0 0;
+                height: 100%;
+
+                .amount {
+                  font-weight: 600;
+                  color: var(--kronologic-cal-invite-amount-color);
+                }
+              }
+            }
+          }
+
+          &:nth-child(odd) {
+            > div:not(:first-child) {
+              border-bottom: 1px solid var(--kronologic-cal-tr-alt-bg);
+
+              &.shadow {
+                background-color: var(--kronologic-cal-shadow-day-bg);
+              }
+
+              &.currentDay {
+                background-color: var(--kronologic-cal-tr-current-bg);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .indicator {
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      width: 100%;
+      .time {
+        position: absolute;
+        background-color: var(--fire-color);
+        right: 0;
+        padding: 4px 12px;
+        color: var(--kronologic-cal-indicator-color);
+        font-weight: 600;
+        font-size: 12px;
+        opacity: 0.7;
+      }
+      .indicatorLine {
+        background-color: var(--fire-color);
+        height: 3px;
+      }
+    }
+  }
+}

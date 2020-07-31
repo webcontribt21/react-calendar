@@ -1,0 +1,97 @@
+:local {
+  [data-theme='default'] {
+    --channels-container-bg: hsl(0, 0%, 95%);
+    --channels-color: hsl(0, 0%, 35%);
+    --channel-header-icon-fill-color: hsl(0, 0%, 55%);
+  }
+
+  [data-theme='dark'] {
+    --channels-container-bg: hsl(0, 0%, 10%);
+    --channels-color: hsl(0, 0%, 35%);
+    --channel-header-icon-fill-color: hsl(0, 0%, 60%);
+  }
+
+  .cards {
+    padding: 50px 0 25px 15px;
+  }
+
+  .content {
+    margin: 0 25px;
+  }
+  .channels {
+    padding: 50px;
+    margin: 0 25px;
+    border-radius: var(--border-radius);
+    background-color: var(--channels-container-bg);
+
+    .channelContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      > .channel {
+        margin-right: 25px;
+        max-width: 450px;
+        width: 450px;
+
+        .content {
+          display: flex;
+          align-items: center;
+          color: var(--channels-color);
+
+          > svg {
+            margin-right: 15px;
+            fill: var(--channels-color);
+          }
+
+          > h3 {
+            text-transform: capitalize;
+            margin-right: 50px;
+            font-size: 16px;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  }
+
+  .modalHeader {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 16px;
+    text-transform: capitalize;
+    width: 100%;
+
+    > img {
+      margin-right: 25px;
+      width: 50px;
+    }
+
+    > span {
+      margin-right: 50px;
+      width: 100%;
+      font-size: 16px;
+      font-weight: 600;
+      text-transform: capitalize;
+      color: var(--channel-header-icon-fill-color);
+    }
+
+    .headerActions {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      width: 100%;
+      margin: 0 auto 0 0;
+
+      > button {
+        padding: 10px 10px;
+      }
+
+      svg {
+        fill: var(--channel-header-icon-fill-color);
+        margin-right: 0;
+      }
+    }
+  }
+}

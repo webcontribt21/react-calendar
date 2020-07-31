@@ -1,0 +1,107 @@
+:local {
+  [data-theme='default'] {
+    --filter-lbl-color: var(--primary-text-color);
+    --contacts-meetings-th-bg-color: hsl(0, 0%, 92%);
+    --contacts-meetings-td-bg-color: hsl(0, 0%, 95%);
+    --close-btn-bg-color: var(--whisper-color);
+  }
+
+  [data-theme='dark'] {
+    --filter-lbl-color: rgba(255, 255, 255, 0.35);
+    --contacts-meetings-th-bg-color: hsl(0, 0%, 10%);
+    --contacts-meetings-td-bg-color: hsl(0, 0%, 14%);
+    --close-btn-bg-color: var(--whisper-color);
+  }
+
+  .contacts {
+    height: 100%;
+
+    .actions {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+
+      .filters {
+        width: 100%;
+        margin-top: 0;
+
+        > label {
+          margin-top: 0;
+
+          input {
+            margin-top: 0;
+          }
+        }
+      }
+    }
+
+    .content {
+      margin-top: 50px;
+
+      table {
+        > thead {
+          > tr:first-child {
+            > th:last-child {
+              background: var(--contacts-meetings-th-bg-color);
+            }
+          }
+
+          > tr:last-child {
+            > th:first-child {
+              width: 50px;
+              text-align: center;
+            }
+            > th:nth-child(n + 8):nth-child(-n + 11) {
+              background: var(--contacts-meetings-th-bg-color);
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .profileURL {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+
+    > img {
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+    }
+
+    > .noProfileURL {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 48px;
+      height: 48px;
+      background-color: var(--user-mgmt-no-profile-bg);
+      border-radius: 50%;
+      font-size: 18px;
+      margin-right: 25px;
+    }
+  }
+
+  .contact {
+    padding: 15px 25px;
+    margin-bottom: 25px;
+  }
+
+  .count {
+    font-size: 14px;
+    text-transform: capitalize;
+  }
+
+  .centered {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+  }
+}

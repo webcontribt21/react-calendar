@@ -1,0 +1,82 @@
+:local {
+  /* Theme-specific vars */
+  [data-theme='default'] {
+    --chk-bg-color: hsl(0, 0%, 95%);
+    --chk-border-color: hsl(0, 0%, 92%);
+    --chk-bg-color-checked: var(--primary-color);
+    --chk-checkmark-color: hsl(0, 0%, 100%);
+  }
+
+  [data-theme='dark'] {
+    --chk-bg-color: hsl(0, 0%, 10%);
+    --chk-border-color: hsl(0, 0%, 15%);
+    --chk-bg-color-checked: var(--primary-color);
+    --chk-checkmark-color: hsl(0, 0%, 100%);
+  }
+
+  .chkContainer {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    &:hover {
+      input ~ .checkmark {
+        background-color: var(--chk-bg-color);
+      }
+    }
+
+    input[type='checkbox'] {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 25px;
+      width: 25px;
+      left: 0;
+      z-index: 2;
+
+      &:checked {
+        ~ .checkmark {
+          background-color: var(--chk-bg-color-checked);
+
+          &:after {
+            display: block;
+          }
+        }
+      }
+    }
+
+    /* Create a custom checkbox */
+    .checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 25px;
+      width: 25px;
+      background-color: var(--chk-bg-color);
+      border: 1px solid var(--chk-border-color);
+
+      &:after {
+        content: '';
+        position: absolute;
+        display: none;
+
+        left: 8px;
+        top: 3px;
+        width: 5px;
+        height: 10px;
+        border: solid var(--chk-checkmark-color);
+        border-width: 0 3px 3px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+      }
+    }
+  }
+}

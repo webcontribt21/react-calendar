@@ -1,0 +1,77 @@
+:local {
+  [data-theme='default'] {
+    --templates-table-edit-color: hsl(0, 0%, 57%);
+  }
+
+  [data-theme='dark'] {
+    --templates-table-edit-color: hsl(0, 0%, 50%);
+  }
+
+  .content {
+    margin-top: 50px;
+    padding: 0 20px;
+
+    table {
+      > thead {
+        > tr th:first-child {
+          width: 50px;
+        }
+      }
+      > tbody {
+        > tr td {
+          > .editCell {
+            text-align: center;
+            align-content: center;
+            justify-content: center;
+            display: flex;
+          }
+          > button {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+
+  .iconCell {
+    display: flex;
+    justify-content: center;
+
+    svg {
+      fill: var(--templates-table-edit-color);
+      margin-right: 15px;
+    }
+  }
+
+  .templates {
+    .cards {
+      .cardContent {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        > header {
+          margin-bottom: 15px;
+
+          > h3 {
+            font-size: 48px;
+            font-weight: 300;
+
+            > span {
+              font-size: 50%;
+              text-transform: uppercase;
+              margin-left: 5px;
+              font-weight: 500;
+            }
+          }
+        }
+
+        .subHeader {
+          text-transform: capitalize;
+          color: var(--primary-color);
+        }
+      }
+    }
+  }
+}

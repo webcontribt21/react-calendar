@@ -1,0 +1,27 @@
+[data-theme='default'] {
+  --editor-text-color: hsl(0, 0%, 30%);
+  --editor-bg-color: hsl(0, 0%, 99%);
+  --editor-border-color: hsl(0, 0%, 90%);
+}
+
+[data-theme='dark'] {
+  --editor-text-color: hsl(0, 0%, 90%);
+  --editor-bg-color: hsl(0, 0%, 20%);
+  --editor-border-color: hsl(0, 0%, 10%);
+}
+
+.ql-stroke {
+  stroke: var(--editor-text-color) !important;
+}
+
+.ql-editor {
+  background-color: var(--editor-bg-color);
+}
+
+.ql-container {
+  border: none !important;
+}
+
+.ql-toolbar {
+  border: 1px solid var(--editor-border-color) !important;
+}

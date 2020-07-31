@@ -1,0 +1,20 @@
+:local {
+  .csvSource {
+  }
+
+  .zone {
+    margin-top: 25px;
+    padding: 25px 50px;
+    display: flex;
+    font-weight: 400;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+    background-color: var(--bg-color);
+    color: var(--primary-text-color);
+    overflow: hidden;
+    position: relative;
+    border-radius: var(--border-radius);
+    border: var(--input-border) dashed var(--input-border-color);
+  }
+}

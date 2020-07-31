@@ -1,0 +1,20 @@
+:local {
+  .multiCell {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+
+    &.tagCell > div {
+      align-self: center;
+    }
+
+    .subItem {
+      display: flex;
+      justify-content: flex-start;
+
+      &:not(:last-child) {
+        margin-bottom: 15px;
+      }
+    }
+  }
+}

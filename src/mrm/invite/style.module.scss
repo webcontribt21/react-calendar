@@ -1,0 +1,118 @@
+:local {
+  [data-theme='default'] {
+    --invite-close-modal-color: hsl(0, 0%, 95%);
+
+    --invite-note-type-color: hsl(0, 0%, 25%);
+    --invite-note-inner-dot-bg: hsl(0, 0%, 95%);
+    --invite-note-content-bg: hsl(0, 0%, 95%);
+    --invite-note-date-color: hsl(0, 0%, 55%);
+  }
+
+  [data-theme='dark'] {
+    --invite-close-modal-color: hsl(0, 0%, 30%);
+    --invite-note-type-color: hsl(0, 0%, 65%);
+    --invite-note-inner-dot-bg: hsl(0, 0%, 10%);
+    --invite-note-content-bg: hsl(0, 0%, 15%);
+    --invite-note-date-color: hsl(0, 0%, 35%);
+  }
+
+  .close {
+    fill: var(--invite-close-modal-color);
+    transition: 0.3s transform cubic-bezier(0.155, 1.105, 0.295, 1.12),
+      0.3s;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.25);
+    }
+  }
+
+  .history {
+    max-height: 700px;
+    overflow: scroll;
+  }
+
+  .conversation {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    > ul {
+      padding: 0;
+      list-style-type: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      > li {
+        margin-bottom: 15px;
+
+        &.left {
+          align-self: flex-start;
+          width: 75%;
+        }
+
+        &.right {
+          align-self: flex-end;
+          width: 75%;
+        }
+
+        > .email {
+          font-size: 75%;
+          margin-bottom: 10px;
+          padding: 0 10px;
+          color: var(--invite-note-date-color);
+
+          &.left {
+            text-align: left;
+          }
+
+          &.right {
+            text-align: right;
+          }
+        }
+
+        > .msg {
+          background-color: var(--invite-note-content-bg);
+          padding: 15px 20px;
+          border-radius: 20px;
+          font-size: 85%;
+
+          &.system {
+            background: none;
+            color: var(--invite-note-date-color);
+            text-align: center;
+            font-style: italic;
+            text-transform: capitalize;
+          }
+
+          &.left {
+            border-top-left-radius: 5px;
+          }
+
+          &.right {
+            border-top-right-radius: 5px;
+          }
+        }
+
+        > .time {
+          font-size: 75%;
+          padding: 0 10px;
+          color: var(--invite-note-date-color);
+          text-align: center;
+
+          &.left {
+            text-align: left;
+            margin-top: 5px;
+          }
+
+          &.right {
+            text-align: right;
+            margin-top: 5px;
+          }
+        }
+      }
+    }
+  }
+}

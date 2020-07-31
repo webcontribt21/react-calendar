@@ -1,0 +1,82 @@
+:local {
+  [data-theme='default'] {
+    --login-header-color: hsl(0, 0%, 40%);
+  }
+
+  [data-theme='dark'] {
+    --login-header-color: hsl(0, 0%, 90%);
+  }
+
+  .authCard {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 35%;
+    height: 40%;
+  }
+
+  .authWrapper {
+    text-align: center;
+  }
+
+  .authForm {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+  }
+
+  .field {
+    margin-bottom: 1rem;
+  }
+
+  .authActions {
+    margin: 0 0 50px 0;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  footer {
+    margin: 0 auto;
+    font-size: 85%;
+    a {
+      margin: 0 5px 0 5px;
+    }
+    height: 100%;
+  }
+
+  .actions {
+    margin-top: 50px;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .reminder {
+    align-self: center;
+    text-transform: capitalize;
+    font-size: 80%;
+    margin: 0 auto;
+    margin-left: 25px;
+    color: var(--secondary-link-color);
+  }
+
+  .federatedBtn {
+    font-size: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 260px;
+
+    > img {
+      margin-right: 24px;
+      width: 28px;
+    }
+
+    > span {
+      text-transform: capitalize;
+    }
+  }
+}

@@ -1,0 +1,281 @@
+:local {
+  @import '../../style/helpers.scss';
+
+  /* Theme-specific vars */
+  [data-theme='default'] {
+    /* Primary colors */
+    --btn-bg-primary-color: var(--primary-color);
+    --btn-bg-primary-color-active: var(--primary-color-lighter);
+    --btn-bg-primary-color-disabled: var(--primary-color-darker);
+    --btn-text-primary-color: hsl(0, 0%, 99%);
+    --btn-text-primary-color-disabled: hsl(0, 0%, 80%);
+    --btn-border-primary-color: var(--primary-color);
+    --btn-shadow-bg-primary: var(--primary-color-lighter);
+    /* Secondary colors */
+    --btn-bg-secondary-color: none;
+    --btn-border-secondary-color: hsl(0, 0%, 90%);
+    --btn-text-secondary-color: hsl(0, 0%, 50%);
+    --btn-text-secondary-color-disabled: hsl(0, 0%, 80%);
+    --btn-bg-secondary-color-active: hsl(0, 0%, 94%);
+    --btn-bg-secondary-color-disabled: hsl(0, 0%, 95%);
+    --btn-shadow-bg-secondary: hsl(0, 0%, 90%);
+    /* Tertiary colors, similar to a link */
+    --btn-bg-tertiary-color: none;
+    --btn-bg-tertiary-color-active: none;
+    --btn-bg-tertiary-color-disabled: none;
+    --btn-text-tertiary-color: var(--primary-color);
+    --btn-text-tertiary-color-disabled: var(--primary-color-darker);
+    --btn-border-tertiary-color: none;
+    --btn-shadow-bg-tertiary: none;
+    /* Text colors, just text */
+    --btn-bg-text-color: none;
+    --btn-bg-text-color-active: none;
+    --btn-bg-text-color-disabled: none;
+    --btn-text-text-color: hsl(0, 0%, 14%);
+    --btn-text-text-color-disabled: hsl(0, 0%, 30%);
+    --btn-border-text-color: none;
+    --btn-shadow-bg-text: none;
+
+    --btn-pulse-success-color: hsla(208, 97%, 50%, 0.255);
+  }
+
+  [data-theme='dark'] {
+    --btn-bg-primary-color: var(--primary-color);
+    --btn-bg-primary-color-active: var(--primary-color-lighter);
+    --btn-bg-primary-color-disabled: var(--primary-color-darker);
+    --btn-text-primary-color: hsl(0, 0%, 90%);
+    --btn-text-primary-color-disabled: hsl(0, 0%, 80%);
+    --btn-border-primary-color: none;
+    --btn-shadow-bg-primary: hsl(0, 0%, 12%);
+    /* Secondary colors */
+    --btn-bg-secondary-color: hsl(0, 0%, 9%);
+    --btn-border-secondary-color: hsl(0, 0%, 10%);
+    --btn-border-secondary-color-disabled: hsl(0, 0%, 12%);
+    --btn-text-secondary-color: hsl(0, 0%, 70%);
+    --btn-text-secondary-color-disabled: hsl(0, 0%, 25%);
+    --btn-bg-secondary-color-active: hsl(0, 0%, 12%);
+    --btn-bg-secondary-color-disabled: hsl(0, 0%, 20%);
+    --btn-shadow-bg-secondary: hsl(0, 0%, 12%);
+    /* Tertiary colors, similar to a link */
+    --btn-bg-tertiary-color: none;
+    --btn-bg-tertiary-color-active: none;
+    --btn-bg-tertiary-color-disabled: none;
+    --btn-text-tertiary-color: var(--primary-color);
+    --btn-text-tertiary-color-disabled: var(--primary-color-darker);
+    --btn-border-tertiary-color: none;
+    --btn-shadow-bg-tertiary: none;
+    /* Text colors, just text */
+    --btn-bg-text-color: none;
+    --btn-bg-text-color-active: none;
+    --btn-bg-text-color-disabled: none;
+    --btn-text-text-color: hsl(0, 0%, 94%);
+    --btn-text-text-color-disabled: hsl(0, 0%, 50%);
+    --btn-border-text-color: none;
+    --btn-shadow-bg-text: none;
+
+    --btn-pulse-success-color: hsla(208, 97%, 50%, 0.255);
+  }
+
+  /* Button sizes */
+  .btn[data-size='default'] {
+    --height: 45px;
+    --padding: 10px 25px;
+    --font-size: 14px;
+  }
+
+  .btn[data-size='small'] {
+    --height: 36px;
+    --padding: 5px 7px;
+    --font-size: 12px;
+  }
+
+  .btn[data-size='large'] {
+    --height: 50px;
+    --padding: 12px 30px;
+    --font-size: 16px;
+  }
+
+  .group {
+    display: flex;
+    margin-right: 15px;
+
+    button {
+      border-radius: 0;
+
+      &:first-child {
+        border-top-left-radius: var(--border-radius);
+        border-bottom-left-radius: var(--border-radius);
+        margin-right: 1px;
+      }
+
+      &:last-child {
+        border-top-right-radius: var(--border-radius);
+        border-bottom-right-radius: var(--border-radius);
+      }
+    }
+  }
+
+  .btn {
+    cursor: pointer;
+    padding: var(--padding);
+    font-size: var(--font-size);
+    font-weight: 400;
+    border: none;
+    border-radius: var(--border-radius);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: var(--height);
+    box-shadow: 0 0 0 0 var(--btn-pulse-success-color);
+
+    &.pulseSuccess {
+      animation: pulse 1s infinite;
+    }
+
+    &.disabled {
+      cursor: not-allowed;
+    }
+
+    .icon {
+      margin-right: 15px;
+
+      &:only-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .primary {
+    background: var(--btn-bg-primary-color);
+    color: var(--btn-text-primary-color);
+
+    &.isActive,
+    &:hover,
+    &:active {
+      background: var(--btn-bg-primary-color-active);
+      border-color: var(--btn-bg-primary-color-active);
+    }
+
+    &.isActive {
+      text-decoration: underline;
+      color: var(--btn-bg-tertiary-color-active);
+    }
+
+    &.disabled {
+      color: var(--btn-text-primary-color-disabled);
+      background: var(--btn-bg-primary-color-disabled);
+
+      > svg {
+        fill: var(--btn-text-primary-color-disabled);
+      }
+    }
+
+    > svg {
+      fill: var(--btn-text-primary-color);
+    }
+  }
+
+  .secondary {
+    background: var(--btn-bg-secondary-color);
+    border: 1px solid var(--btn-border-secondary-color);
+    color: var(--btn-text-secondary-color);
+
+    &.isActive,
+    &:hover,
+    &:active {
+      background: var(--btn-bg-secondary-color-active);
+      border-color: var(--btn-bg-secondary-color-active);
+    }
+
+    &.isActive {
+      text-decoration: underline;
+      color: var(--btn-bg-tertiary-color-active);
+    }
+
+    &.disabled {
+      color: var(--btn-text-secondary-color-disabled);
+      border: 1px solid var(--btn-border-secondary-color-disabled);
+
+      > svg {
+        fill: var(--btn-text-secondary-color-disabled);
+      }
+    }
+
+    > svg {
+      fill: var(--btn-text-secondary-color);
+    }
+  }
+
+  .tertiary {
+    background: var(--btn-bg-tertiary-color);
+    color: var(--btn-text-tertiary-color);
+
+    &.isActive,
+    &:hover,
+    &:active {
+      font-weight: 600;
+      background: var(--btn-bg-tertiary-color-active);
+      border-color: var(--btn-bg-tertiary-color-active);
+    }
+
+    &.isActive {
+      text-decoration: underline;
+      color: var(--btn-bg-tertiary-color-active);
+    }
+
+    &.disabled {
+      color: var(--btn-text-tertiary-color-disabled);
+      background: var(--btn-bg-tertiary-color-disabled);
+
+      > svg {
+        fill: var(--btn-text-tertiary-color-disabled);
+      }
+    }
+
+    > svg {
+      fill: var(--btn-text-tertiary-color);
+    }
+  }
+
+  .text {
+    background: var(--btn-bg-text-color);
+    color: var(--btn-text-text-color);
+
+    &.isActive,
+    &:hover,
+    &:active {
+      background: var(--btn-bg-text-color-active);
+    }
+
+    &.disabled {
+      color: var(--btn-text-text-color-disabled);
+      background: var(--btn-bg-text-color-disabled);
+
+      > svg {
+        fill: var(--btn-text-text-color-disabled);
+      }
+    }
+
+    > svg {
+      fill: var(--btn-text-text-color);
+    }
+  }
+
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0px hsla(152, 98%, 50%, 0.735);
+    }
+    25% {
+      box-shadow: 0 0 0 3px hsla(152, 98%, 50%, 0.535);
+    }
+    50% {
+      box-shadow: 0 0 0 6px hsla(152, 98%, 50%, 0.435);
+    }
+    75% {
+      box-shadow: 0 0 0 9px hsla(152, 98%, 50%, 0.235);
+    }
+    100% {
+      box-shadow: 0 0 0 12px hsla(210, 4%, 11%, 0.461);
+    }
+  }
+}

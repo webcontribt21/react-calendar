@@ -1,0 +1,39 @@
+image: docker:stable
+
+cache:
+  paths:
+    - node_modules/
+    - .yarn
+    - dist/
+
+variables:
+  CI_REGISTRY: registry.gitlab.com
+  IMAGE: tribeware/kronologic-app/ui_build_image
+
+before_script:
+  - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+
+stages:
+  - build:staging
+  - build:production
+
+Deploy to staging:
+  stage: build:staging
+  services:
+    - docker:dind
+  script:
+    - docker build --no-cache --build-arg STAGE=staging -t $CI_REGISTRY/$IMAGE .
+    - docker push $CI_REGISTRY/$IMAGE
+  only:
+    - master
+
+Deploy to production:
+  stage: build:production
+  services:
+    - docker:dind
+  script:
+    - docker build --no-cache --build-arg STAGE=production -t $CI_REGISTRY/$IMAGE .
+    - docker push $CI_REGISTRY/$IMAGE
+  when: manual
+  only:
+    - master

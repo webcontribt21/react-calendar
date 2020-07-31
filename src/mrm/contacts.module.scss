@@ -1,0 +1,81 @@
+:local {
+  [data-theme='default'] {
+    --filter-lbl-color: var(--primary-text-color);
+    --contacts-meetings-th-bg-color: hsl(0, 0%, 92%);
+    --contacts-meetings-td-bg-color: hsl(0, 0%, 95%);
+    --close-btn-bg-color: var(--whisper-color);
+  }
+
+  [data-theme='dark'] {
+    --filter-lbl-color: rgba(255, 255, 255, 0.35);
+    --contacts-meetings-th-bg-color: hsl(0, 0%, 10%);
+    --contacts-meetings-td-bg-color: hsl(0, 0%, 14%);
+    --close-btn-bg-color: var(--whisper-color);
+  }
+
+  .contacts {
+    height: 100%;
+
+    .actions {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+
+      .filters {
+        width: 100%;
+        margin-top: 0;
+
+        > label {
+          margin-top: 0;
+
+          input {
+            margin-top: 0;
+          }
+        }
+      }
+    }
+
+    .content {
+      margin-top: 50px;
+
+      table {
+        > thead {
+          > tr:last-child {
+            > th:first-child {
+              width: 50px;
+            }
+            > th:nth-child(n + 6):nth-child(-n + 9) {
+              text-align: center;
+            }
+          }
+        }
+        > tbody {
+          > tr td {
+            > button {
+              font-size: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .contact {
+    padding: 15px 25px;
+    margin-bottom: 25px;
+  }
+
+  .count {
+    font-size: 14px;
+    text-transform: capitalize;
+  }
+
+  .centered {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    flex-direction: column;
+    align-items: center;
+  }
+}

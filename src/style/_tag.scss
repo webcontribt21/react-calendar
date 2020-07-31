@@ -1,0 +1,28 @@
+.tag {
+  padding: 7px 10px;
+  border-radius: var(--border-radius);
+  background-color: var(--whisper-color);
+  font-size: 90%;
+}
+
+.tag.is-primary {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  font-weight: 500;
+}
+
+.tag.is-secondary {
+  background-color: var(--secondary-color);
+  color: var(--white-color);
+  font-weight: 500;
+}
+
+.tag.is-fire {
+  background-color: var(--fire-color);
+  color: var(--white-color);
+  font-weight: 500;
+}
+
+.tag--extension {
+  background-color: var(--chilean-fire-color-lighter);
+}

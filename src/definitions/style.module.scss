@@ -1,0 +1,114 @@
+:local {
+  [data-theme='default'] {
+    --meeting-mgmt-main-header-form-bg: hsl(0, 0%, 95%);
+    --definition-amount-border-color: hsl(0, 0%, 55%);
+  }
+
+  [data-theme='dark'] {
+    --meeting-mgmt-main-header-form-bg: hsl(0, 0%, 7%);
+    --definition-amount-border-color: hsl(0, 0%, 75%);
+  }
+
+  .content {
+    padding: 0 20px;
+  }
+
+  .jobs {
+    .cards {
+      .cardContent {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        > header {
+          margin-bottom: 15px;
+
+          > h3 {
+            font-size: 48px;
+            font-weight: 300;
+
+            > span {
+              font-size: 50%;
+              text-transform: uppercase;
+              margin-left: 5px;
+              font-weight: 500;
+            }
+          }
+        }
+
+        .subHeader {
+          text-transform: capitalize;
+          color: var(--primary-color);
+        }
+      }
+    }
+
+    .meetings {
+      margin-top: 80px;
+      padding: 0 25px;
+      display: flex;
+      flex-direction: column;
+      overflow-y: scroll;
+    }
+
+    .actions {
+      display: flex;
+      justify-content: center;
+      padding: 0 25px;
+      margin-top: 25px;
+    }
+
+    .mainActions {
+      margin-top: 15px;
+      display: flex;
+      justify-content: flex-end;
+
+      > button {
+        align-self: flex-start;
+        margin: 0 auto 0 0;
+      }
+    }
+
+    .mainHeader {
+      display: flex;
+      flex-direction: column;
+      border-radius: var(--border-radius);
+
+      > label {
+        margin-top: 0;
+      }
+
+      .amount {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        > input {
+          border: 0;
+          background: none;
+          font-size: 18px;
+          width: 100px;
+          border-radius: 0;
+          border-bottom: 1px solid
+            var(--definition-amount-border-color);
+        }
+      }
+
+      .defName {
+        height: 75px;
+        font-size: 24px;
+        text-align: center;
+      }
+
+      .lblSlider {
+        padding: 10px 10px;
+      }
+
+      > form {
+        width: 100%;
+      }
+    }
+  }
+}

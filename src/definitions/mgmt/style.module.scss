@@ -1,0 +1,71 @@
+:local {
+  [data-theme='default'] {
+    --meeting-mgmt-list-bg: hsl(0, 0%, 95%);
+    --meeting-icon-color: hsl(0, 0%, 45%);
+    --meeting-dyn-fields-header-color: hsl(0, 0%, 35%);
+  }
+
+  [data-theme='dark'] {
+    --meeting-mgmt-list-bg: hsl(0, 0%, 10%);
+    --meeting-icon-color: hsl(0, 0%, 45%);
+    --meeting-dyn-fields-header-color: hsl(0, 0%, 85%);
+  }
+
+  .meetingMgmt {
+    margin: 0;
+    padding: 25px;
+    background-color: var(--meeting-mgmt-list-bg);
+    border-radius: var(--border-radius);
+
+    .dynamicFields {
+      margin-top: 10px;
+
+      > h3 {
+        color: var(--meeting-dyn-fields-header-color);
+        text-transform: capitalize;
+        margin-bottom: 35px;
+      }
+
+      > .fields {
+        display: flex;
+        flex-direction: column;
+
+        > button {
+          margin-bottom: 15px;
+          height: 100%;
+          max-height: 80px;
+
+          .sample {
+            margin-top: 10px;
+            color: var(--primary-color);
+          }
+        }
+      }
+    }
+
+    .actions {
+      height: 100px;
+
+      > button {
+        margin-left: 25px;
+      }
+    }
+
+    .templateActions {
+      svg {
+        fill: var(--meeting-icon-color);
+      }
+    }
+  }
+
+  .progress {
+    padding: 10px 25px 0 25px;
+    display: flex;
+
+    > svg {
+      stroke: var(--primary-color);
+      height: 5px;
+      width: 100%;
+    }
+  }
+}

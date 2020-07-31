@@ -1,0 +1,135 @@
+:local {
+  [data-theme='default'] {
+    --contact-close-modal-color: hsl(0, 0%, 95%);
+    --contact-header-info-color: hsl(0, 0%, 80%);
+    --contact-header-icon-fill-color: hsl(0, 0%, 35%);
+    --add-meeting-dragndrop-border-color: hsl(0, 0%, 90%);
+    --add-meeting-tag-color: hsl(0, 0%, 90%);
+    --add-meeting-icon-color: hsl(0, 0%, 50%);
+    --add-meeting-tag-active-bg: var(--fire-color);
+    --add-meeting-tag-active-color: hsl(0, 0%, 95%);
+  }
+
+  [data-theme='dark'] {
+    --contact-close-modal-color: hsl(0, 0%, 30%);
+    --contact-header-info-color: hsl(0, 0%, 30%);
+    --contact-header-icon-fill-color: hsl(0, 0%, 90%);
+    --add-meeting-dragndrop-border-color: hsl(0, 0%, 70%);
+    --add-meeting-tag-color: hsl(0, 0%, 30%);
+    --add-meeting-icon-color: hsl(0, 0%, 50%);
+    --add-meeting-tag-active-bg: var(--fire-color);
+    --add-meeting-tag-active-color: hsl(0, 0%, 95%);
+  }
+
+  .addContactsModal {
+    hr {
+      margin: 25px 0;
+    }
+
+    .modalHeader {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      font-size: 16px;
+      text-transform: capitalize;
+      width: 100%;
+
+      > span {
+        width: 100%;
+      }
+
+      > svg {
+        fill: var(--contact-header-icon-fill-color);
+        margin-right: 15px;
+      }
+
+      .headerActions {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+        margin: 0 auto 0 0;
+
+        > span {
+          color: var(--contact-header-info-color);
+          font-size: 16px;
+          font-weight: 400;
+          margin-right: 10px;
+          text-transform: none;
+        }
+      }
+    }
+
+    .close {
+      fill: var(--contact-close-modal-color);
+      transition: 0.3s transform
+          cubic-bezier(0.155, 1.105, 0.295, 1.12),
+        0.3s;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.25);
+      }
+    }
+  }
+
+  .actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 25px;
+    margin-bottom: 25px;
+
+    > button {
+      margin-right: 15px;
+    }
+  }
+
+  .templateActions {
+    margin-top: 25px;
+  }
+
+  .tagLbl {
+    > span {
+      margin-bottom: 10px;
+    }
+  }
+
+  .templates,
+  .selectedTemplates {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 25px;
+    border: 3px dashed var(--add-meeting-dragndrop-border-color);
+
+    .draggable {
+      padding: 10px 25px;
+      background: var(--add-meeting-tag-color);
+      margin: 0 15px 15px 0;
+      display: flex;
+      justify-items: center;
+      align-items: center;
+      border-radius: var(--border-radius);
+      cursor: grab;
+
+      > svg {
+        margin-right: 10px;
+        fill: var(--add-meeting-icon-color);
+      }
+
+      &.isDragging {
+        background: var(--add-meeting-tag-active-bg);
+        color: var(--add-meeting-tag-active-color);
+        transform: rotate(1deg);
+
+        > svg {
+          fill: var(--add-meeting-tag-active-color);
+        }
+      }
+    }
+  }
+
+  .selectedTemplates {
+    flex-direction: column;
+  }
+}

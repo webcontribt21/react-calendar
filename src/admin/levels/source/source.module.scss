@@ -1,0 +1,61 @@
+:local {
+  .source {
+  }
+
+  .sourceHeader {
+    display: flex;
+    align-items: center;
+
+    > img {
+      width: 48px;
+      object-fit: contain;
+      margin-right: 25px;
+    }
+  }
+
+  .close {
+    fill: var(--modal-close-color);
+    transition: 0.3s transform cubic-bezier(0.155, 1.105, 0.295, 1.12),
+      0.3s;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.25);
+    }
+  }
+
+  .availableSources {
+    ul {
+      list-style-type: none;
+
+      > li {
+        margin: 15px 0 25px 0;
+        display: flex;
+        justify-content: flex-start;
+
+        &.isSelected {
+          > button {
+            border: 1px solid var(--secondary-color) !important;
+          }
+        }
+
+        > button {
+          font-weight: 600;
+          width: 100%;
+          border: 0 !important;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+
+          > img {
+            width: 48px;
+            object-fit: contain;
+            -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
+            margin-right: 25px;
+          }
+        }
+      }
+    }
+  }
+}

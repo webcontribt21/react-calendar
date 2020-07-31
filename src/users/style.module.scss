@@ -1,0 +1,167 @@
+:local {
+  [data-theme='default'] {
+    --user-mgmt-nav-border-color: hsl(0, 0%, 80%);
+    --user-mgmt-nav-txt--color: hsl(0, 0%, 40%);
+    --user-mgmt-nav-bg-icon: hsl(0, 0%, 50%);
+    --user-mgmt-role-icon-color: hsl(0, 0%, 50%);
+    --user-team-mgmt-list-bg: hsl(0, 0%, 95%);
+    --user-mgmt-no-profile-bg: hsl(0, 0%, 95%);
+  }
+
+  [data-theme='dark'] {
+    --user-mgmt-nav-border-color: hsl(0, 0%, 50%);
+    --user-mgmt-nav-txt--color: hsl(0, 0%, 95%);
+    --user-mgmt-nav-bg-icon: hsl(0, 0%, 50%);
+    --user-mgmt-role-icon-color: hsl(0, 0%, 70%);
+    --user-team-mgmt-list-bg: hsl(0, 0%, 10%);
+    --user-mgmt-no-profile-bg: hsl(0, 0%, 25%);
+  }
+
+  .userMgmt,
+  .teamMgmt {
+    background-color: var(--user-team-mgmt-list-bg);
+  }
+
+  .content {
+    margin-top: 25px;
+  }
+
+  .cards {
+    .cardContent {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      > header {
+        margin-bottom: 15px;
+
+        > h3 {
+          font-size: 48px;
+          font-weight: 300;
+
+          > span {
+            font-size: 50%;
+            text-transform: uppercase;
+            margin-left: 5px;
+            font-weight: 500;
+          }
+        }
+      }
+
+      .subHeader {
+        text-transform: capitalize;
+        color: var(--primary-color);
+      }
+    }
+  }
+
+  .organization {
+    padding: 25px;
+
+    .actions {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+
+    .roleIcon {
+      text-align: center;
+
+      > svg {
+        fill: var(--user-mgmt-role-icon-color);
+      }
+    }
+
+    .profileURL {
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+
+      > img {
+        border-radius: 64px;
+        width: 64px;
+        height: 64px;
+      }
+
+      > .noProfileURL {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 48px;
+        height: 48px;
+        background-color: var(--user-mgmt-no-profile-bg);
+        border-radius: 50%;
+        font-size: 18px;
+        margin-right: 25px;
+      }
+    }
+
+    table {
+      > tbody {
+        > tr {
+          > td:first-child {
+            width: 50px;
+          }
+          > td:last-child {
+            text-align: center;
+            font-weight: 500;
+            font-size: 32px;
+          }
+        }
+      }
+    }
+
+    .centered {
+      display: flex;
+      justify-content: center;
+      justify-items: center;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .navSection {
+      > .navList {
+        list-style: none;
+
+        > li {
+          > a {
+            color: var(--user-mgmt-nav-txt--color);
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 20px 25px;
+
+            &.active {
+              font-weight: 600;
+              border: 1px solid var(--user-mgmt-nav-border-color);
+              border-radius: var(--border-radius);
+
+              > svg {
+                fill: var(--primary-color);
+              }
+            }
+
+            > svg {
+              fill: var(--user-mgmt-nav-bg-icon);
+              margin-right: 25px;
+            }
+          }
+        }
+      }
+    }
+
+    .scheduling {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      .weekdays {
+        margin-right: 5px;
+      }
+      .availability {
+        margin-right: 5px;
+      }
+    }
+  }
+}

@@ -1,0 +1,88 @@
+:local {
+  [data-theme='default'] {
+    --settiings-nav-border-color: hsl(0, 0%, 80%);
+    --settiings-nav-txt--color: hsl(0, 0%, 40%);
+    --settiings-nav-bg-icon: hsl(0, 0%, 50%);
+    --settiings-role-icon-color: hsl(0, 0%, 50%);
+  }
+
+  [data-theme='dark'] {
+    --settiings-nav-border-color: hsl(0, 0%, 50%);
+    --settiings-nav-txt--color: hsl(0, 0%, 95%);
+    --settiings-nav-bg-icon: hsl(0, 0%, 50%);
+    --settiings-role-icon-color: hsl(0, 0%, 70%);
+  }
+
+  .organization {
+    padding: 50px;
+
+    .actions {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+
+    .roleIcon {
+      text-align: center;
+
+      > svg {
+        fill: var(--settiings-role-icon-color);
+      }
+    }
+
+    .profileURL {
+      text-align: center;
+      > img {
+        border-radius: 64px;
+        width: 64px;
+        height: 64px;
+      }
+    }
+
+    table {
+      > tbody {
+        > tr {
+          > td:first-child {
+            width: 50px;
+          }
+          > td:last-child {
+            text-align: center;
+            font-weight: 500;
+            font-size: 32px;
+          }
+        }
+      }
+    }
+
+    .navSection {
+      > .navList {
+        list-style: none;
+
+        > li {
+          > a {
+            color: var(--settiings-nav-txt--color);
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 20px 25px;
+
+            &.active {
+              font-weight: 600;
+              border: 1px solid var(--settiings-nav-border-color);
+              border-radius: var(--border-radius);
+
+              > svg {
+                fill: var(--primary-color);
+              }
+            }
+
+            > svg {
+              fill: var(--settiings-nav-bg-icon);
+              margin-right: 25px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

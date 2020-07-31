@@ -1,0 +1,53 @@
+:local {
+  [data-theme='default'] {
+    --tag-bg-color: hsl(0, 0%, 90%);
+    --tag-bg-color-light: hsl(0, 0%, 95%);
+    --tag-text-color-light: hsl(0, 0%, 40%);
+    --tag-text-color: hsl(0, 0%, 40%);
+    --tag-warining-color: rgb(236, 190, 6);
+  }
+
+  [data-theme='dark'] {
+    --tag-bg-color: hsl(0, 0%, 10%);
+    --tag-bg-color-light: hsl(0, 0%, 20%);
+    --tag-text-color-light: hsl(0, 0%, 90%);
+    --tag-text-color: hsl(0, 0%, 90%);
+    --tag-warining-color: rgb(236, 190, 6);
+  }
+
+  .tag {
+    border-radius: var(--border-radius);
+    background: var(--tag-bg-color);
+    padding: 7px 15px;
+    color: var(--tag-text-color);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    text-transform: capitalize;
+    white-space: nowrap;
+
+    > span {
+      margin-right: 15px;
+    }
+
+    &.info {
+      background: var(--primary-color);
+      color: var(--whisper-color);
+    }
+
+    &.error {
+      background: var(--fire-color);
+      color: var(--whisper-color);
+    }
+
+    &.warning {
+      background: var(--tag-warining-color);
+      color: var(--whisper-color);
+    }
+
+    &.light {
+      background-color: var(--tag-bg-color-light);
+      color: var(--tag-text-color-light);
+    }
+  }
+}

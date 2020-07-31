@@ -1,0 +1,134 @@
+:local {
+  .admin {
+  }
+
+  .svgContainer {
+    padding: 50px 0 100% 0;
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+  }
+
+  #graph {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: auto;
+    padding: 25px;
+  }
+
+  .col {
+    display: flex;
+    width: 100%;
+    height: 100%;
+
+    div:first-child {
+      position: relative;
+
+      > svg {
+        cursor: pointer;
+        margin-left: 15px;
+        position: absolute;
+        top: 100px;
+        fill: var(--col-icon-color);
+
+        &:hover {
+          fill: var(--primary-color);
+        }
+      }
+    }
+  }
+
+  .colTitle {
+    background: none;
+    border: 0;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: var(--col-text-color);
+    display: flex;
+    align-items: center;
+
+    > svg {
+      margin-left: 15px;
+      fill: var(--col-icon-color);
+    }
+  }
+
+  .hr {
+    stroke-dasharray: 4;
+    stroke-linecap: butt;
+    stroke: var(--col-hr-color);
+  }
+
+  .integrations {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    width: 100px;
+    margin: 25px;
+  }
+
+  .integrationImg {
+    width: 168px;
+  }
+
+  .node {
+    margin: 0;
+    text-align: center;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .integrationNode {
+    align-content: flex-start;
+    border-right: 10px solid var(--primary-color);
+  }
+
+  .userNode {
+    border-left: 10px solid var(--chilean-fire-color);
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .defaultNode {
+    font-size: 21px;
+    text-transform: capitalize;
+    font-weight: 400;
+    border-right: 7px solid var(--node-border-color);
+    border-left: 7px solid var(--node-border-color);
+  }
+
+  .path {
+    fill: none;
+    stroke: var(--node-link-color);
+    animation: AnimationName 3s ease infinite;
+    mix-blend-mode: multiply;
+  }
+
+  .nodeContent {
+    padding: 10px 15px;
+    margin: 10px 15px;
+  }
+
+  @keyframes AnimationName {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+}

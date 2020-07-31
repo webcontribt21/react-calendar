@@ -1,0 +1,106 @@
+.nav-down {
+  margin: 0 auto;
+  list-style: none;
+  position: relative;
+  cursor: pointer;
+
+  > li {
+    cursor: pointer;
+    &:first-child {
+      > button {
+        display: flex;
+        align-items: center;
+        border: 0;
+        background: none;
+        outline: none;
+        cursor: pointer;
+
+        svg {
+          path {
+            fill: var(--dd-bg-color-chevron);
+          }
+        }
+
+        &:hover {
+          svg {
+            path {
+              fill: var(--dd-bg-color-chevron-hover);
+            }
+          }
+        }
+      }
+    }
+
+    > ul {
+      visibility: visible;
+      opacity: 1;
+      transition: visibility 0s linear 0s, opacity 500ms;
+
+      &.is-close {
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0s linear 300ms, opacity 500ms;
+      }
+
+      background-color: var(--dd-bg-color);
+      position: absolute;
+      right: 0;
+      list-style: none;
+      box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.15);
+      min-width: 260px;
+
+      > li {
+        text-align: left;
+        padding: 15px 30px;
+        cursor: pointer;
+
+        &:first-child {
+          border-bottom: 1px solid var(--nav-border-color);
+          padding: 15px 70px;
+          cursor: default;
+
+          > button,
+          > a {
+            color: var(--primary-text-color);
+            font-weight: 700;
+            cursor: default;
+          }
+
+          &:hover {
+            background-color: transparent;
+          }
+        }
+
+        &:hover {
+          background-color: var(--nav-bg-color);
+
+          > button,
+          > a {
+            svg {
+              fill: var(--primary-text-color);
+            }
+          }
+        }
+
+        > button,
+        > a {
+          color: var(--primary-text-color);
+          display: flex;
+          align-items: center;
+          text-transform: capitalize;
+          font-size: 85%;
+          font-weight: 400;
+          border: 0;
+          background: none;
+          outline: none;
+          cursor: pointer;
+
+          > svg {
+            margin-right: 15px;
+            fill: var(--primary-text-color);
+          }
+        }
+      }
+    }
+  }
+}

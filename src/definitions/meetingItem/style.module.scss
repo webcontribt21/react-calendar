@@ -1,0 +1,48 @@
+:local {
+  .meetingItem {
+    width: 100%;
+    margin-bottom: 25px;
+
+    .modalHeader {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      width: 100%;
+
+      &.selected {
+        > span {
+          font-weight: 700;
+          color: var(--primary-color);
+        }
+      }
+
+      > button {
+        padding: 0;
+        margin-left: 15px;
+      }
+
+      > span {
+        width: 100%;
+        font-size: 14px;
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+
+      .headerActions {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin: 0 auto 0 0;
+        width: 100%;
+
+        > span {
+          color: var(--contact-header-info-color);
+          font-size: 16px;
+          font-weight: 400;
+          margin-right: 10px;
+          text-transform: none;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,94 @@
+:local {
+  [data-theme='default'] {
+    --icon-fill-color: hsl(0, 0%, 40%);
+    --icon-fill-color-off: hsl(0, 0%, 40%);
+  }
+
+  [data-theme='dark'] {
+    --icon-fill-color: hsl(0, 0%, 40%);
+    --icon-fill-color-off: hsl(0, 0%, 40%);
+  }
+
+  .switchLbl[data-size='default'] {
+    --width: 60px;
+    --height: 30px;
+    --c-width: 26px;
+    --c-height: 26px;
+    --c-active-width: 40px;
+  }
+
+  .switchLbl[data-size='small'] {
+    --width: 40px;
+    --height: 24px;
+    --c-width: 20px;
+    --c-height: 20px;
+    --c-active-width: 30px;
+  }
+
+  .switchLbl[data-size='large'] {
+    --width: 80px;
+    --height: 40px;
+    --c-width: 36px;
+    --c-height: 36px;
+    --c-active-width: 60px;
+  }
+
+  .switchChk {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+  }
+
+  .switchLbl {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    width: var(--width);
+    height: var(--height);
+    background: var(--grey-color);
+    border-radius: var(--width);
+    position: relative;
+    transition: background-color 0.2s;
+    margin: 0;
+
+    &.isOn {
+      background: var(--primary-color);
+
+      .switchBtn {
+        > svg {
+          fill: var(--icon-fill-color);
+        }
+      }
+    }
+
+    .switchBtn {
+      content: '';
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: var(--c-width);
+      height: var(--c-height);
+      border-radius: var(--c-width);
+      transition: 0.2s;
+      background: #fff;
+      box-shadow: 0 0 2px 0 var(--default-shadow-color);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      > svg {
+        fill: var(--icon-fill-color-off);
+      }
+    }
+  }
+
+  .switchChk:checked + .switchLbl .switchBtn {
+    left: calc(100% - 2px);
+    transform: translateX(-100%);
+  }
+
+  .switchLbl:active .switchBtn {
+    width: var(--c-active-width);
+  }
+}
