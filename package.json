@@ -30,7 +30,7 @@
     "d3-sankey": "^0.12.1",
     "dayjs": "^1.8.16",
     "dompurify": "^2.0.7",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "jwt-decode": "^2.2.0",
     "nprogress": "^0.2.0",
     "papaparse": "^5.1.0",
